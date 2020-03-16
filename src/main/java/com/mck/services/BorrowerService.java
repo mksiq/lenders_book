@@ -32,7 +32,6 @@ public class BorrowerService {
 		obj.setId(null);
 		obj = repo.save(obj);
 		return obj;
-				
 	}
 	
 	public Borrower fromDTO(BorrowerDTO obj) {
