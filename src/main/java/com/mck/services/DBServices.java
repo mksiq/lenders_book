@@ -1,7 +1,10 @@
 package com.mck.services;
 
 import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Arrays;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,12 +25,12 @@ public class DBServices {
 	public void instantiateDatabase() throws ParseException {
 		
 		Borrower bo1 = new Borrower(null, "Jon Doe", "(213) 2020-2020", "doejon@gmail.com");
-		Loan l1 = new Loan(null, "Rent loan", "Solicited by app", null, null, bo1, 200.00);
-		Loan l2 = new Loan(null, "Food loan", "Solicited by app", null, null, bo1, 19.90);
-		Loan l3 = new Loan(null, "Car loan", "Solicited by app", null, null, bo1, 350.00);
+		Loan l1 = new Loan(null, "Rent loan", "Solicited by app", Date.from((LocalDate.now()).atStartOfDay(ZoneId.systemDefault()).toInstant()), null, bo1, 200.00);
+		Loan l2 = new Loan(null, "Food loan", "Solicited by app", Date.from((LocalDate.now()).atStartOfDay(ZoneId.systemDefault()).toInstant()), null, bo1, 19.90);
+		Loan l3 = new Loan(null, "Car loan", "Solicited by app", Date.from((LocalDate.now()).atStartOfDay(ZoneId.systemDefault()).toInstant()), null, bo1, 350.00);
 		
 		Borrower bo2 = new Borrower(null, "Mary Jane", "(213) 2020-2021", "janemary@gmail.com");
-		Loan l4 = new Loan(null, "Cat food", "poor cat", null, null, bo2, 4.99);
+		Loan l4 = new Loan(null, "Cat food", "poor cat", Date.from((LocalDate.now()).atStartOfDay(ZoneId.systemDefault()).toInstant()), null, bo2, 4.99);
 		
 		bo1.getLoans().addAll(Arrays.asList(l1,l2,l3));
 		

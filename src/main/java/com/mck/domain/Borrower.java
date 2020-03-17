@@ -42,6 +42,17 @@ public class Borrower implements Serializable{
 	public List<Loan> getLoans() {
 		return loans;
 	}
+	
+	public double getTotal() {
+		double sum = 0.0;
+		
+		for (Loan loan : loans) {
+			sum+= loan.getValue();
+		}
+		
+		return sum;
+		
+	}
 	public void setLoans(List<Loan> loans) {
 		this.loans = loans;
 	}

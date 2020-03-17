@@ -15,7 +15,7 @@
 	<description>bookeeping for private lending</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 	</properties>
 
 	<dependencies>
@@ -46,7 +46,11 @@
 			<scope>runtime</scope>
 		</dependency>
 		
-
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
